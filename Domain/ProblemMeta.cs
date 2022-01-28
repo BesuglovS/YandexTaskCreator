@@ -105,7 +105,7 @@ namespace YandexTaskCreator.Domain
 		public Invocationlimits Invocationlimits { get; set; }
 
 		[XmlElement(ElementName = "test-sets")]
-		public Testsets Testsets { get; set; }
+		public List<Testsets> Testsets { get; set; }
 
 		[XmlElement(ElementName = "max-source-size-bytes")]
 		public int Maxsourcesizebytes { get; set; }
@@ -142,15 +142,27 @@ namespace YandexTaskCreator.Domain
 					Memorylimit = 67108864,
 					Outputlimit = 67108864,
 				},
-				Testsets = new Testsets()
-				{
-					Key = 1,
-					Value = new Value()
-					{
-						From = 1,
-						To = 5,
-						Example = false,
+				Testsets = new List<Testsets> { 
+					new Testsets()
+                    {
+						Key = 1,
+						Value = new Value()
+						{
+							From = 1,
+							To = 3,
+							Example = true,
+						},
 					},
+					new Testsets()
+					{
+						Key = 2,
+						Value = new Value()
+						{
+							From = 1,
+							To = 5,
+							Example = false,
+						},
+					}
 				},
 				Maxsourcesizebytes = 262144,
 				Checkersettings = new Checkersettings()

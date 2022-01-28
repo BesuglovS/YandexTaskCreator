@@ -142,7 +142,14 @@ namespace YandexTaskCreator
             {
                 File.Delete(archiveName);
             }
-            ZipFile.CreateFromDirectory("Task", archiveName);
+            try
+            {
+                ZipFile.CreateFromDirectory("Task", archiveName);
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

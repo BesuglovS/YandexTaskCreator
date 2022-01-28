@@ -30,6 +30,7 @@ namespace YandexTaskCreator.Domain
     public class TestSets
     {
         public _1 _1 { get; set; }
+        public _1 _2 { get; set; }
     }
 
     public class PerCompilerInvocationLimits
@@ -98,9 +99,16 @@ namespace YandexTaskCreator.Domain
                     {
                         "1", new _1() { 
                             from = 1,
+                            to = 3,
+                            example = true
+                        } 
+                    },
+                    {
+                        "2", new _1() {
+                            from = 1,
                             to = 5,
                             example = false
-                        } 
+                        }
                     }
                 },
                 perCompilerInvocationLimits = new PerCompilerInvocationLimits(),
